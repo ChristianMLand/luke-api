@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchForm from './components/SearchForm';
-import InfoDisplay from './Views/InfoDisplay';
-import ErrorDisplay from './Views/ErrorDisplay';
+import InfoDisplay from './views/InfoDisplay';
+import ErrorDisplay from './views/ErrorDisplay';
 
 function App() {
 

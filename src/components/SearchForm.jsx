@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom"
-import typeMap from '../Views/typeMap.json'
+import typeMap from '../views/typeMap.json'
 
 const SearchForm = () => {
     const [formData, setFormData] = useState({ type : 'people', id : 1 });
