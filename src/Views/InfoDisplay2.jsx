@@ -18,7 +18,7 @@ const InfoDisplay = () => {
             const result = await axios.get(`https://swapi.dev/api/${ type }/${ id }`)
             return result.data
         } catch(error) {
-            navigate('/error')
+            navigate('/404')
         }
     }
 

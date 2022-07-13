@@ -1,5 +1,5 @@
 {
-    "people" : ["height", "mass", "hair_colr", "skin_color"],
+    "people" : ["height", "mass", "hair_color", "skin_color"],
     "planets" : ["climate", "terrain", "surface_water", "population"],
     "species" : ["classification", "designation", "language"],
     "starships" : ["model", "manufacturer", "starship_class"],
