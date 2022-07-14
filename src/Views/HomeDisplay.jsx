@@ -1,5 +1,5 @@
-import SearchForm from "../components/SearchForm"
-import { Outlet } from "react-router-dom"
+import SearchForm from "../components/SearchForm";
+import { Outlet } from "react-router-dom";
 
 const HomeDisplay = () => {
     return (
@@ -7,7 +7,7 @@ const HomeDisplay = () => {
             <SearchForm />
             <Outlet />
         </>
-    )
-}
+    );
+};
 
-export default HomeDisplay
+export default HomeDisplay;

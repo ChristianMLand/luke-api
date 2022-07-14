@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"
-import typeMap from '../views/typeMap.json'
+import { useNavigate } from "react-router-dom";
+import typeMap from "../views/typeMap.json";
 
 const SearchForm = () => {
-    const [formData, setFormData] = useState({ type : 'people', id : 1 });
+    const [formData, setFormData] = useState({ type : "people", id : 1 });
     const navigate = useNavigate();
 
     const handleSubmit = e => {
         e.preventDefault();
-        navigate(`/${formData.type}/${formData.id}`)
-    }
+        navigate(`/${formData.type}/${formData.id}`);
+    };
 
     const handleChange = e => setFormData({ ...formData, [e.target.name] : e.target.value });
 
@@ -23,7 +23,7 @@ const SearchForm = () => {
             <input name="id" value={ formData.id } onChange={ handleChange } type="number"/>
             <button>Search</button>
         </form>
-    )
-}
+    );
+};
 
-export default SearchForm
+export default SearchForm;

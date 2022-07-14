@@ -1,27 +1,27 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom"
-import typeMap from './typeMap.json'
-//more advanced version that gets the homeworlds as well
+import { useNavigate, useParams } from "react-router-dom";
+import typeMap from "./typeMap.json";
+
+const fetchInfo = async (type, id) => {
+    const res = await axios.get(`https://swapi.dev/api/${ type }/${ id }`);
+    try {
+        const homeworld = await axios.get(res.data.homeworld);
+        res.data.homeworldName = homeworld.data.name;
+    } finally {
+        return res.data;
+    }
+};
+
 const InfoDisplay = () => {
     const { type, id } = useParams();
     const [info, setInfo] = useState();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
         setInfo(null)
         fetchInfo(type, id).then(setInfo).catch(() => navigate('/404'))
-    }, [type, id, navigate])
-
-    const fetchInfo = async (type, id) => {
-        const res = await axios.get(`https://swapi.dev/api/${ type }/${ id }`)
-        try {
-            const homeworld = await axios.get(res.data.homeworld)
-            return {...res.data, homeworldName: homeworld.data.name}
-        } catch(error) {
-            return res.data
-        }
-    }
+    }, [type, id, navigate]);
 
     return (
         info ? 
@@ -34,6 +34,6 @@ const InfoDisplay = () => {
         </div>
         :
         <h1>Loading...</h1>
-    )
-}
-export default InfoDisplay
+    );
+};
+export default InfoDisplay;

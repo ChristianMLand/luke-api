@@ -4,7 +4,6 @@ import InfoDisplay from './views/InfoDisplay';
 import ErrorDisplay from './views/ErrorDisplay';
 
 function App() {
-
   return (
     <Routes>
       <Route path="/" element={ <HomeDisplay /> }>
